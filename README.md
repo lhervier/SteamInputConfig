@@ -23,3 +23,13 @@ The configuration is a set of 3 layers :
 So, when in the editor, use the normal controls, and additionnal controls obtained by maintaining the left back button. And when in flight mode, use the normal controls, and additionnal controls obtained by maintaining the right back button.
 
 Also note that right and left click a bound to the right and left directionnal pad buttons. With the Raiju, you can bind those two directions to the M1 and M2 buttons (the one next to the triggers).
+
+# To use this configuration 
+
+I will publish this configuration to the steam community. Just search for the user "lhervier". 
+
+If you want to try it before it is published, copy the vdf file to this folder :
+
+  ${STEAM_ROOT}/userdata/<your steam id>/config/controller_configs/apps/220200/<id of your controller>/guest/
+  
+220200 is the KSP Steam game id.
