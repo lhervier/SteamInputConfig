@@ -830,6 +830,19 @@
 		"mode"		"four_buttons"
 		"inputs"
 		{
+			"button_a"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"controller_action SHOW_KEYBOARD, Show Keyboard"
+						}
+					}
+				}
+			}
 			"button_b"
 			{
 				"activators"
