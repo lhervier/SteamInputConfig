@@ -461,6 +461,13 @@
 				}
 			}
 		}
+		"settings"
+		{
+			"deadzone_outer_radius"		"32767"
+			"deadzone_inner_radius"		"0"
+			"edge_binding_radius"		"0"
+			"adaptive_threshold"		"5"
+		}
 	}
 	"group"
 	{
