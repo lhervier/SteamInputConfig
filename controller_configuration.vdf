@@ -170,7 +170,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press A, Roll Left"
+							"binding"		"key_press Q, Roll Left"
 						}
 					}
 				}
