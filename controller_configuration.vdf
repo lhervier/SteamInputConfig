@@ -562,7 +562,7 @@
 					}
 				}
 			}
-			"dpad_east"
+			"dpad_west"
 			{
 				"activators"
 				{
@@ -575,7 +575,7 @@
 					}
 				}
 			}
-			"dpad_west"
+			"dpad_east"
 			{
 				"activators"
 				{
