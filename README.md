@@ -30,6 +30,8 @@ I will publish this configuration to the steam community. Just search for the us
 
 If you want to try it before it is published, copy the vdf file to this folder :
 
-  ${STEAM_ROOT}/userdata/<your steam id>/config/controller_configs/apps/220200/<id of your controller>/guest/
+    ${STEAM_ROOT}/userdata/<your steam id>/config/controller_configs/apps/220200/<id of your controller>/guest/
   
 220200 is the KSP Steam game id.
+
+You may have to create a dummy configuration file before the folder exist.
