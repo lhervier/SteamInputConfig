@@ -442,7 +442,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press W, Full Throttle"
+							"binding"		"key_press Z, Full Throttle"
 						}
 					}
 				}
