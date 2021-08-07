@@ -21,14 +21,14 @@
 	{
 		"Preset_1000001"
 		{
-			"title"		"Left Grip (L3)"
+			"title"		"Editor Commands (L3)"
 			"legacy_set"		"1"
 			"set_layer"		"1"
 			"parent_set_name"		"Default"
 		}
 		"Preset_1000002"
 		{
-			"title"		"Right Grip (R3)"
+			"title"		"Flight Commands (R3)"
 			"legacy_set"		"1"
 			"set_layer"		"1"
 			"parent_set_name"		"Default"
@@ -517,7 +517,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"controller_action hold_layer 3 1 1, Right Grip"
+							"binding"		"controller_action hold_layer 3 1 1, Flight Commands"
 						}
 					}
 				}
@@ -596,7 +596,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"controller_action hold_layer 2 1 1, Left Grip"
+							"binding"		"controller_action hold_layer 2 1 1, Editor Commands"
 						}
 					}
 				}
