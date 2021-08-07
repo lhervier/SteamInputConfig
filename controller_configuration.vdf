@@ -781,6 +781,44 @@
 	}
 	"group"
 	{
+		"id"		"12"
+		"mode"		"dpad"
+		"inputs"
+		{
+			"dpad_north"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press KEYPAD_PLUS, Zoom + (VAB)"
+						}
+					}
+				}
+			}
+			"dpad_south"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press KEYPAD_DASH, Zoom - (VAB)"
+						}
+					}
+				}
+			}
+		}
+		"settings"
+		{
+			"layer"		"1"
+		}
+	}
+	"group"
+	{
 		"id"		"13"
 		"mode"		"four_buttons"
 		"inputs"
@@ -1272,6 +1310,7 @@
 		"group_source_bindings"
 		{
 			"9"		"switch active"
+			"12"		"joystick active"
 			"13"		"button_diamond active"
 			"14"		"dpad active"
 		}
