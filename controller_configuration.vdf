@@ -125,11 +125,11 @@
 	}
 	"group"
 	{
-		"id"		"1"
-		"mode"		"dpad"
+		"id"		"0"
+		"mode"		"switches"
 		"inputs"
 		{
-			"dpad_north"
+			"button_escape"
 			{
 				"activators"
 				{
@@ -137,12 +137,12 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press F7, Next Action Set"
+							"binding"		"key_press ESCAPE, Menu"
 						}
 					}
 				}
 			}
-			"dpad_south"
+			"button_menu"
 			{
 				"activators"
 				{
@@ -150,7 +150,66 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press F6, Prev Action Set"
+							"binding"		"key_press SEMICOLON, Map"
+						}
+					}
+					"Long_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press DELETE, Toggle Docking Mode"
+						}
+					}
+				}
+			}
+			"left_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press A, Roll Left"
+						}
+					}
+				}
+			}
+			"right_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press E, Roll Right"
+						}
+					}
+				}
+			}
+			"button_back_left"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press C, Crouch"
+						}
+					}
+				}
+			}
+			"button_back_right"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press R, Reload"
 						}
 					}
 				}
@@ -329,6 +388,40 @@
 						"settings"
 						{
 							"haptic_intensity"		"2"
+						}
+					}
+				}
+			}
+		}
+	}
+	"group"
+	{
+		"id"		"1"
+		"mode"		"dpad"
+		"inputs"
+		{
+			"dpad_north"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press F7, Next Action Set"
+						}
+					}
+				}
+			}
+			"dpad_south"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press F6, Prev Action Set"
 						}
 					}
 				}
@@ -648,6 +741,46 @@
 	}
 	"group"
 	{
+		"id"		"9"
+		"mode"		"switches"
+		"inputs"
+		{
+			"button_escape"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press LEFT_CONTROL, Redo"
+							"binding"		"key_press Y, Redo"
+						}
+					}
+				}
+			}
+			"button_menu"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press LEFT_CONTROL, Undo"
+							"binding"		"key_press W, Undo"
+						}
+					}
+				}
+			}
+		}
+		"settings"
+		{
+			"layer"		"1"
+		}
+	}
+	"group"
+	{
 		"id"		"13"
 		"mode"		"four_buttons"
 		"inputs"
@@ -740,6 +873,79 @@
 						{
 							"binding"		"key_press LEFT_SHIFT, Shift Right Click"
 							"binding"		"mouse_button RIGHT, Shift Right Click"
+						}
+					}
+				}
+			}
+		}
+		"settings"
+		{
+			"layer"		"1"
+		}
+	}
+	"group"
+	{
+		"id"		"15"
+		"mode"		"switches"
+		"inputs"
+		{
+			"button_escape"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press LEFT_ALT, Debug Menu"
+							"binding"		"key_press F12, Debug Menu"
+						}
+					}
+					"Long_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press RIGHT_BRACKET, Next Vessel"
+						}
+					}
+				}
+			}
+			"button_menu"
+			{
+				"activators"
+				{
+					"Long_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press LEFT_BRACKET, Prev Vessel"
+						}
+					}
+				}
+			}
+			"left_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press LEFT_SHIFT, Prev Body"
+							"binding"		"key_press TAB, Prev Body"
+						}
+					}
+				}
+			}
+			"right_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press TAB, Next Body"
 						}
 					}
 				}
@@ -1020,414 +1226,28 @@
 			"layer"		"1"
 		}
 	}
-	"group"
-	{
-		"id"		"21"
-		"mode"		"trigger"
-		"inputs"
-		{
-		}
-		"settings"
-		{
-			"layer"		"1"
-		}
-	}
-	"group"
-	{
-		"id"		"22"
-		"mode"		"trigger"
-		"inputs"
-		{
-		}
-		"settings"
-		{
-			"layer"		"1"
-		}
-	}
-	"group"
-	{
-		"id"		"23"
-		"mode"		"radial_menu"
-		"inputs"
-		{
-			"touch_menu_button_1"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 1, Action Group 1 / Select Tool"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-			"touch_menu_button_2"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 2, Action Group 2 / Move Tool"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-			"touch_menu_button_3"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 3, Action Group 3 / Rotate Tool"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-			"touch_menu_button_4"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 4, Action Group 4 / Reroot Tool"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-			"touch_menu_button_5"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 5, Action Group 5"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-			"touch_menu_button_6"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 6, Action Group 6"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-			"touch_menu_button_7"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 7, Action Group 7"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-			"touch_menu_button_8"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 8, Action Group 8"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-			"touch_menu_button_9"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 9, Action Group 9"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-			"touch_menu_button_10"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press 0, Action Group 0"
-						}
-						"settings"
-						{
-							"haptic_intensity"		"2"
-						}
-					}
-				}
-			}
-		}
-	}
-	"group"
-	{
-		"id"		"0"
-		"mode"		"switches"
-		"inputs"
-		{
-			"button_escape"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press ESCAPE, Menu"
-						}
-					}
-				}
-			}
-			"button_menu"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press SEMICOLON, Map"
-						}
-					}
-					"Long_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press DELETE, Toggle Docking Mode"
-						}
-					}
-				}
-			}
-			"left_bumper"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press A, Roll Left"
-						}
-					}
-				}
-			}
-			"right_bumper"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press E, Roll Right"
-						}
-					}
-				}
-			}
-			"button_back_left"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press C, Crouch"
-						}
-					}
-				}
-			}
-			"button_back_right"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press R, Reload"
-						}
-					}
-				}
-			}
-		}
-	}
-	"group"
-	{
-		"id"		"9"
-		"mode"		"switches"
-		"inputs"
-		{
-			"button_escape"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press LEFT_CONTROL, Redo"
-							"binding"		"key_press Y, Redo"
-						}
-					}
-				}
-			}
-			"button_menu"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press LEFT_CONTROL, Undo"
-							"binding"		"key_press W, Undo"
-						}
-					}
-				}
-			}
-		}
-		"settings"
-		{
-			"layer"		"1"
-		}
-	}
-	"group"
-	{
-		"id"		"15"
-		"mode"		"switches"
-		"inputs"
-		{
-			"button_escape"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press LEFT_ALT, Debug Menu"
-							"binding"		"key_press F12, Debug Menu"
-						}
-					}
-					"Long_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press RIGHT_BRACKET, Next Vessel"
-						}
-					}
-				}
-			}
-			"button_menu"
-			{
-				"activators"
-				{
-					"Long_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press LEFT_BRACKET, Prev Vessel"
-						}
-					}
-				}
-			}
-			"left_bumper"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press LEFT_SHIFT, Prev Body"
-							"binding"		"key_press TAB, Prev Body"
-						}
-					}
-				}
-			}
-			"right_bumper"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press TAB, Next Body"
-						}
-					}
-				}
-			}
-		}
-		"settings"
-		{
-			"layer"		"1"
-		}
-	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	"preset"
 	{
 		"id"		"0"
@@ -1452,8 +1272,6 @@
 		"group_source_bindings"
 		{
 			"9"		"switch active"
-			"22"		"right_trigger active"
-			"21"		"left_trigger active"
 			"13"		"button_diamond active"
 			"14"		"dpad active"
 		}
