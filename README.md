@@ -8,21 +8,18 @@ So, where is the problem ?
 
 KSP is DRM free. Even with the Steam version. Just get the "Kerbal Space Program" folder in your steam "common" folder, copy/paste it, double click the "KSP_x64.exe" executable file, and you're up. This is very usefull - for example - to play heavily modded versions (I love RP-1) AND the stock version at the same time.
 
-The problem is that when you launch KSP by hand, you will not have Steam Input. A solution seems to add a shortcut in Steam. This is working, as you will have Steam Input, but you will not be linked to Steam itself, and the game will no longer be able to switch between action sets. You will be stuck to the "Menu" action set.
+The problem is that when you launch KSP by hand, you will not have Steam Input. A solution seems to add a shortcut in Steam ("Add a non steam product" in the lower left corner). This is working, as you will have Steam Input, but KSP will not be linked to Steam itself, and will no longer be able to switch between action sets. You will be stuck in the "Menu" action set.
 
+So, I write this configuration file to play RP-1 with my "Raiju Tournament Edition" PS4 controller. 
 
-
-This is a steam input configuration file to play KSP using a "Raiju Tournament Edition" PS4 controller. 
-
-Right stick button R3 and left stick L3 button must be mapped to the M3 and M4 back buttons of the Raiju. They are used to each maintain an different additionnal layer. This configuration can be reproduced with a XBox Elite Controller for example. But as I'm using the integrated mouse pad for action groups and action sets, this configuration is not transposable as is.
+Right stick button R3 and left stick button L3 must be mapped to the M3 and M4 back buttons of the Raiju. They are used to each maintain an different additionnal layer. This configuration can be reproduced with a XBox Elite Controller for example. But as I'm using the integrated mouse pad for action groups and action sets, this configuration is not transposable as is.
 
 The configuration is a set of 3 layers :
 
 - The main layer contains all the actions common to the editor and the flight mode.
-- Maintaining R3 (mapped to M4 Raiju back button) will add a layer, and add controls needed for flight mode.
-- Maintaining L3 (mapped to M3 Raiju back button) will add a layer, and add controls needed for editor mode.
+- Maintaining R3 (mapped to M4 Raiju back button) will surimpose a new layer, and add controls needed for flight mode.
+- Maintaining L3 (mapped to M3 Raiju back button) will surimpose an other new layer, and add controls needed for editor mode.
 
-So, when in editor, use the left back button, and when in flight mode, use the right back button.
+So, when in the editor, use the normal controls, and additionnal controls obtained by maintaining the left back button. And when in flight mode, use the normal controls, and additionnal controls obtained by maintaining the right back button.
 
-- Not mandatory : As Left CLick is Directionnal Pad Right, and Right click is Directionnal Pad Left, you can map these two buttons to the Raiju M1 and M2 buttons (buttons close to the two targets)
-
+Also note that right and left click a bound to the right and left directionnal pad buttons. With the Raiju, you can bind those two directions to the M1 and M2 buttons (the one next to the triggers).
