@@ -787,6 +787,19 @@
 					}
 				}
 			}
+			"left_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press LEFT_ALT, Mod Key / Maintain part"
+						}
+					}
+				}
+			}
 		}
 		"settings"
 		{
@@ -901,20 +914,6 @@
 					}
 				}
 			}
-			"dpad_east"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press LEFT_ALT, Duplicate part"
-							"binding"		"mouse_button LEFT, Duplicate part"
-						}
-					}
-				}
-			}
 			"dpad_west"
 			{
 				"activators"
@@ -992,6 +991,19 @@
 						{
 							"binding"		"key_press LEFT_ALT, Debug Menu"
 							"binding"		"key_press F12, Debug Menu"
+						}
+					}
+				}
+			}
+			"left_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press LEFT_ALT, Mod Key"
 						}
 					}
 				}
