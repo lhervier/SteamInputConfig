@@ -800,6 +800,19 @@
 					}
 				}
 			}
+			"right_bumper"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press J, Resize Procedural Part"
+						}
+					}
+				}
+			}
 		}
 		"settings"
 		{
