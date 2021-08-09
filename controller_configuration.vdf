@@ -949,8 +949,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press LEFT_ALT, Debug Menu"
-							"binding"		"key_press F12, Debug Menu"
+							"binding"		"key_press TAB, Next Body"
 						}
 					}
 					"Long_Press"
@@ -966,25 +965,19 @@
 			{
 				"activators"
 				{
-					"Long_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press LEFT_BRACKET, Prev Vessel"
-						}
-					}
-				}
-			}
-			"left_bumper"
-			{
-				"activators"
-				{
 					"Full_Press"
 					{
 						"bindings"
 						{
 							"binding"		"key_press LEFT_SHIFT, Prev Body"
 							"binding"		"key_press TAB, Prev Body"
+						}
+					}
+					"Long_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press LEFT_BRACKET, Prev Vessel"
 						}
 					}
 				}
@@ -997,7 +990,8 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press TAB, Next Body"
+							"binding"		"key_press LEFT_ALT, Debug Menu"
+							"binding"		"key_press F12, Debug Menu"
 						}
 					}
 				}
