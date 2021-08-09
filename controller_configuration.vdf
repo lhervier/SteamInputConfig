@@ -462,7 +462,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press LEFT_SHIFT, Inc Throttle"
+							"binding"		"key_press LEFT_SHIFT, Incr. Throttle"
 						}
 					}
 				}
@@ -503,7 +503,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press LEFT_CONTROL, Decr Throttle"
+							"binding"		"key_press LEFT_CONTROL, Decr. Throttle"
 						}
 					}
 				}
@@ -1207,7 +1207,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press COMMA, Timewrap Decr"
+							"binding"		"key_press COMMA, Decr. Timewrap"
 						}
 					}
 				}
@@ -1220,7 +1220,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press PERIOD, Timewrap Inc"
+							"binding"		"key_press PERIOD, Incr. Timewrap"
 						}
 					}
 				}
