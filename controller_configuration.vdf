@@ -1323,22 +1323,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press LEFT_ALT, Focus on vessel"
-							"binding"		"mouse_button LEFT, Focus on vessel"
-						}
-					}
-				}
-			}
-			"dpad_west"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press LEFT_ALT, Multi context menu"
-							"binding"		"mouse_button RIGHT, Multi context menu"
+							"binding"		"mouse_button MIDDLE, Middle Click"
 						}
 					}
 				}
