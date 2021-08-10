@@ -961,7 +961,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press PAGE_UP, Camera Up / Cust Axis 1 +"
+							"binding"		"key_press PAGE_UP, Cust Axis 1 + / Camera Up"
 						}
 					}
 				}
@@ -974,7 +974,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press PAGE_DOWN, Camera Down / Cust Axis 1 -"
+							"binding"		"key_press PAGE_DOWN, Cust Axis 1 - / Camera Down"
 						}
 					}
 				}
