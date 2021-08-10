@@ -237,7 +237,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press 1, Action Group 1 / Select Tool"
+							"binding"		"key_press 1, Action Group 1"
 						}
 						"settings"
 						{
@@ -254,7 +254,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press 2, Action Group 2 / Move Tool"
+							"binding"		"key_press 2, Action Group 2"
 						}
 						"settings"
 						{
@@ -271,7 +271,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press 3, Action Group 3 / Rotate Tool"
+							"binding"		"key_press 3, Action Group 3"
 						}
 						"settings"
 						{
@@ -288,7 +288,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press 4, Action Group 4 / Reroot Tool"
+							"binding"		"key_press 4, Action Group 4"
 						}
 						"settings"
 						{
@@ -833,7 +833,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press KEYPAD_PLUS, Zoom + (VAB)"
+							"binding"		"key_press 1, Select Part Tool"
 						}
 					}
 				}
@@ -846,7 +846,33 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press KEYPAD_DASH, Zoom - (VAB)"
+							"binding"		"key_press 3, Rotate Part Tool"
+						}
+					}
+				}
+			}
+			"dpad_west"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press 4, Reroot Vessel Tool"
+						}
+					}
+				}
+			}
+			"dpad_east"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press 2, Move Part Tool"
 						}
 					}
 				}
@@ -863,6 +889,19 @@
 		"mode"		"four_buttons"
 		"inputs"
 		{
+			"button_a"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press KEYPAD_DASH, Zoom Out (VAB)"
+						}
+					}
+				}
+			}
 			"button_b"
 			{
 				"activators"
@@ -885,6 +924,19 @@
 						"bindings"
 						{
 							"binding"		"key_press X, Cycle through Symmertries"
+						}
+					}
+				}
+			}
+			"button_y"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press KEYPAD_PLUS, Zoom In (VAB)"
 						}
 					}
 				}
