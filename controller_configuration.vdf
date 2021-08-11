@@ -532,9 +532,10 @@
 		}
 		"settings"
 		{
-			"curve_exponent"		"0"
+			"curve_exponent"		"5"
+			"custom_curve_exponent"		"42"
 			"output_joystick"		"2"
-			"sensitivity"		"52"
+			"sensitivity"		"126"
 		}
 	}
 	"group"
