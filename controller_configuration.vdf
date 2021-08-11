@@ -1246,7 +1246,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press B, Enter Cockpit"
+							"binding"		"key_press B, Brake / Enter Cockpit"
 						}
 					}
 				}
