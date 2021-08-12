@@ -1323,19 +1323,6 @@
 					}
 				}
 			}
-			"dpad_east"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"mouse_button MIDDLE, Middle Click"
-						}
-					}
-				}
-			}
 		}
 		"settings"
 		{
