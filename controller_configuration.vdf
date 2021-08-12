@@ -441,19 +441,6 @@
 		"mode"		"trigger"
 		"inputs"
 		{
-			"click"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press Z, Full Throttle"
-						}
-					}
-				}
-			}
 			"edge"
 			{
 				"activators"
@@ -472,8 +459,6 @@
 		{
 			"deadzone_outer_radius"		"32767"
 			"deadzone_inner_radius"		"0"
-			"edge_binding_radius"		"0"
-			"adaptive_threshold"		"5"
 		}
 	}
 	"group"
@@ -483,19 +468,6 @@
 		"inputs"
 		{
 			"click"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press X, Kill Throttle"
-						}
-					}
-				}
-			}
-			"edge"
 			{
 				"activators"
 				{
@@ -513,8 +485,6 @@
 		{
 			"deadzone_outer_radius"		"32767"
 			"deadzone_inner_radius"		"0"
-			"edge_binding_radius"		"0"
-			"adaptive_threshold"		"5"
 		}
 	}
 	"group"
@@ -1101,20 +1071,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press H, Trans Fwd"
-						}
-					}
-				}
-			}
-			"edge"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press H, Trans Fwd"
+							"binding"		"key_press Z, Full Throttle"
 						}
 					}
 				}
@@ -1139,20 +1096,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press N, Trans Back"
-						}
-					}
-				}
-			}
-			"edge"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press N, Trans Back"
+							"binding"		"key_press X, Kill Throttle"
 						}
 					}
 				}
