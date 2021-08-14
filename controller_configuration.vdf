@@ -467,7 +467,7 @@
 		"mode"		"trigger"
 		"inputs"
 		{
-			"click"
+			"edge"
 			{
 				"activators"
 				{
@@ -1063,7 +1063,7 @@
 		"mode"		"trigger"
 		"inputs"
 		{
-			"click"
+			"edge"
 			{
 				"activators"
 				{
@@ -1088,7 +1088,7 @@
 		"mode"		"trigger"
 		"inputs"
 		{
-			"click"
+			"edge"
 			{
 				"activators"
 				{
