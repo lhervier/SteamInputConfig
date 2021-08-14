@@ -449,7 +449,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press LEFT_SHIFT, Incr. Throttle"
+							"binding"		"mouse_button LEFT, Left Click"
 						}
 					}
 				}
@@ -475,7 +475,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"key_press LEFT_CONTROL, Decr. Throttle"
+							"binding"		"mouse_button RIGHT, Right Click"
 						}
 					}
 				}
@@ -706,7 +706,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"mouse_button LEFT, Left Click"
+							"binding"		"key_press LEFT_SHIFT, Incr. Throttle"
 						}
 					}
 				}
@@ -719,7 +719,7 @@
 					{
 						"bindings"
 						{
-							"binding"		"mouse_button RIGHT, Right Click"
+							"binding"		"key_press LEFT_CONTROL, Decr. Throttle"
 						}
 					}
 				}
@@ -795,6 +795,33 @@
 		"settings"
 		{
 			"layer"		"1"
+		}
+	}
+	"group"
+	{
+		"id"		"11"
+		"mode"		"trigger"
+		"inputs"
+		{
+			"edge"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press LEFT_SHIFT, Shift Right Click"
+							"binding"		"mouse_button RIGHT, Shift Right Click"
+						}
+					}
+				}
+			}
+		}
+		"settings"
+		{
+			"deadzone_outer_radius"		"32767"
+			"deadzone_inner_radius"		"0"
 		}
 	}
 	"group"
@@ -957,20 +984,6 @@
 					}
 				}
 			}
-			"dpad_west"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press LEFT_SHIFT, Shift Right Click"
-							"binding"		"mouse_button RIGHT, Shift Right Click"
-						}
-					}
-				}
-			}
 		}
 		"settings"
 		{
@@ -1047,56 +1060,6 @@
 						"bindings"
 						{
 							"binding"		"key_press LEFT_ALT, Mod Key"
-						}
-					}
-				}
-			}
-		}
-		"settings"
-		{
-			"layer"		"1"
-		}
-	}
-	"group"
-	{
-		"id"		"16"
-		"mode"		"trigger"
-		"inputs"
-		{
-			"edge"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press Z, Full Throttle"
-						}
-					}
-				}
-			}
-		}
-		"settings"
-		{
-			"layer"		"1"
-		}
-	}
-	"group"
-	{
-		"id"		"17"
-		"mode"		"trigger"
-		"inputs"
-		{
-			"edge"
-			{
-				"activators"
-				{
-					"Full_Press"
-					{
-						"bindings"
-						{
-							"binding"		"key_press X, Kill Throttle"
 						}
 					}
 				}
@@ -1215,6 +1178,32 @@
 					}
 				}
 			}
+			"dpad_east"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press Z, Full Throttle"
+						}
+					}
+				}
+			}
+			"dpad_west"
+			{
+				"activators"
+				{
+					"Full_Press"
+					{
+						"bindings"
+						{
+							"binding"		"key_press X, Kill Throttle"
+						}
+					}
+				}
+			}
 		}
 		"settings"
 		{
@@ -1279,8 +1268,6 @@
 		"group_source_bindings"
 		{
 			"15"		"switch active"
-			"16"		"right_trigger active"
-			"17"		"left_trigger active"
 			"18"		"joystick active"
 			"19"		"button_diamond active"
 			"20"		"dpad active"
