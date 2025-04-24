@@ -2,6 +2,8 @@ const fs = require('fs');
 const path = require('path');
 const VDF = require('vdf-parser');
 
+let groupIdCounter = 0;
+
 /**
  * Formate et sauvegarde un objet VDF dans un fichier
  * @param {Object} obj - L'objet à sauvegarder
@@ -12,23 +14,49 @@ function saveVdfFile(obj, filePath) {
     const tab = '\t';
     let result = '';
     
-    function formatVdf(obj, indent = 0) {
-        for (const [key, value] of Object.entries(obj)) {
-            if (Array.isArray(value)) {
-                // Cas des tableaux : on écrit chaque élément avec la même clé
-                value.forEach(item => {
-                    result += `${tab.repeat(indent)}"${key}"\n${tab.repeat(indent)}{\n`;
-                    formatVdf(item, indent + 1);
-                    result += `${tab.repeat(indent)}}\n`;
-                });
-            } else if (typeof value === 'object' && value !== null) {
+    function writeProperty(key, value, indent) {
+        if (Array.isArray(value)) {
+            // Cas des tableaux : on écrit chaque élément avec la même clé
+            value.forEach(item => {
                 result += `${tab.repeat(indent)}"${key}"\n${tab.repeat(indent)}{\n`;
-                formatVdf(value, indent + 1);
+                
+                // Cas spécial pour les groupes : on écrit l'id en premier
+                if (key === 'group' && item.id !== undefined) {
+                    result += `${tab.repeat(indent + 1)}"id"\t\t"${item.id}"\n`;
+                    const { id, ...rest } = item;
+                    formatVdf(rest, indent + 1);
+                } else {
+                    formatVdf(item, indent + 1);
+                }
+                
                 result += `${tab.repeat(indent)}}\n`;
-            } else {
-                result += `${tab.repeat(indent)}"${key}"\t\t"${value}"\n`;
+            });
+        } else if (typeof value === 'object' && value !== null) {
+            result += `${tab.repeat(indent)}"${key}"\n${tab.repeat(indent)}{\n`;
+            formatVdf(value, indent + 1);
+            result += `${tab.repeat(indent)}}\n`;
+        } else {
+            result += `${tab.repeat(indent)}"${key}"\t\t"${value}"\n`;
+        }
+    }
+    
+    function formatVdf(obj, indent = 0) {
+        // Écrire les propriétés dans l'ordre spécifié
+        const orderedProps = ['actions', 'action_layers', 'localization', 'group', 'preset', 'settings'];
+        
+        // Écrire d'abord les propriétés non ordonnées
+        for (const [key, value] of Object.entries(obj)) {
+            if (!orderedProps.includes(key)) {
+                writeProperty(key, value, indent);
             }
         }
+        
+        // Écrire ensuite les propriétés ordonnées
+        orderedProps.forEach(prop => {
+            if (obj[prop] !== undefined) {
+                writeProperty(prop, obj[prop], indent);
+            }
+        });
     }
     
     formatVdf(obj);
@@ -67,6 +95,12 @@ function loadVdfFile(baseDir, relativePath) {
     else if (relativePath.endsWith('_preset.vdf')) {
         if (!content.trim().startsWith('"preset"')) {
             content = '"preset"\n' + content;
+        }
+    }
+    // Si c'est un fichier _group.vdf, on ajoute l'en-tête "group"
+    else if (relativePath.endsWith('_group.vdf')) {
+        if (!content.trim().startsWith('"group"')) {
+            content = '"group"\n' + content;
         }
     }
 
@@ -165,14 +199,58 @@ function processActions(baseDir) {
 }
 
 /**
+ * Traite tous les groupes d'un preset
+ * @param {string} baseDir - Dossier de base
+ * @param {string} presetDir - Dossier du preset
+ * @returns {Object} Objet contenant les groupes et leurs bindings
+ * @throws {Error} Si les groupes ne peuvent pas être traités
+ */
+function processGroups(baseDir, presetDir) {
+    const groups = [];
+    const groupBindings = {};
+
+    // Lire tous les sous-dossiers de groupes
+    const groupDirs = fs.readdirSync(presetDir)
+        .filter(file => fs.statSync(path.join(presetDir, file)).isDirectory())
+        .sort();
+
+    groupDirs.forEach(groupType => {
+        const groupPath = path.join(presetDir, groupType, '_group.vdf');
+        if (!fs.existsSync(groupPath)) {
+            throw new Error(`Fichier de groupe non trouvé : ${groupPath}`);
+        }
+        
+        const groupData = loadVdfFile(baseDir, path.relative(baseDir, groupPath));
+        
+        // Ajouter l'ID au groupe
+        const groupId = groupIdCounter.toString();
+        groupData.group.id = groupId;
+        
+        // Ajouter le groupe à la liste
+        groups.push(groupData.group);
+        
+        // Ajouter le binding dans le preset
+        groupBindings[groupId] = groupType;
+        
+        groupIdCounter++;
+    });
+
+    return {
+        groups,
+        groupBindings
+    };
+}
+
+/**
  * Traite tous les presets
  * @param {string} baseDir - Dossier de base
- * @returns {Object[]} Liste des presets
+ * @returns {Object[]} Liste des presets avec leurs groupes
  * @throws {Error} Si les presets ne peuvent pas être traités
  */
 function processPresets(baseDir) {
     const presetsDir = path.join(baseDir, 'presets');
     const presets = [];
+    const allGroups = [];
     
     // Lire tous les dossiers de presets
     const presetDirs = fs.readdirSync(presetsDir)
@@ -180,12 +258,25 @@ function processPresets(baseDir) {
         .sort(); // Trie naturellement les dossiers par numéro
 
     presetDirs.forEach(presetDir => {
-        const relativePath = path.join('presets', presetDir, '_preset.vdf');
-        const presetData = loadVdfFile(baseDir, relativePath);
+        const presetPath = path.join(presetsDir, presetDir);
+        const presetData = loadVdfFile(baseDir, path.join('presets', presetDir, '_preset.vdf'));
+        
+        // Traiter les groupes du preset
+        const { groups, groupBindings } = processGroups(baseDir, presetPath);
+        
+        // Ajouter les groupes à la liste globale
+        allGroups.push(...groups);
+        
+        // Ajouter les bindings au preset
+        presetData.preset.group_source_bindings = groupBindings;
+        
         presets.push(presetData.preset);
     });
 
-    return presets;
+    return {
+        presets,
+        groups: allGroups
+    };
 }
 
 /**
@@ -204,9 +295,10 @@ function processDirectory(directoryPath) {
         // Traiter les actions
         templateData.controller_mappings.actions = processActions(directoryPath);
         
-        // Traiter les presets
-        const presets = processPresets(directoryPath);
+        // Traiter les presets et les groupes
+        const { presets, groups } = processPresets(directoryPath);
         templateData.controller_mappings.preset = presets;
+        templateData.controller_mappings.group = groups;
         
         // Écrire le fichier résultant
         const dirName = path.basename(directoryPath);
