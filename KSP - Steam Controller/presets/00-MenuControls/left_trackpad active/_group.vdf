@@ -1,0 +1,13 @@
+{
+	"mode"				"four_buttons"
+	"name"				""
+	"description"		""
+	"inputs"
+	{
+		# Les inputs viennents de chaque fichier vdf
+	}
+	"settings"
+	{
+		"requires_click"		"0"
+	}
+}

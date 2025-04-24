@@ -1,0 +1,9 @@
+{
+	"mode"		"trigger"
+	"name"		""
+	"description"		""
+	"inputs"
+	{
+		# Les inputs viennents de chaque fichier vdf
+	}
+}

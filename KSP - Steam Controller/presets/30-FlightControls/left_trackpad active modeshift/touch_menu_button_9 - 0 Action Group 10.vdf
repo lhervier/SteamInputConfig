@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press 0, Action Group 10, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"3"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

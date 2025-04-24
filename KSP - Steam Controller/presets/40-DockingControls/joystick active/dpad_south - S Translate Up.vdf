@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press S, #b_dckS, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

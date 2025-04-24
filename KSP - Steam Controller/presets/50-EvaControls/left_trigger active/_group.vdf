@@ -1,0 +1,12 @@
+{
+	"mode"		"trigger"
+	"name"		""
+	"description"		""
+	"inputs"
+	{
+	}
+	"settings"
+	{
+		"edge_binding_radius"		"25584"
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press LEFT_CONTROL, #b_dckCtrl, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"2"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

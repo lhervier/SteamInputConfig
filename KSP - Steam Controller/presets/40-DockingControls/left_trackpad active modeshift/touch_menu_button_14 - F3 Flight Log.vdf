@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press F3, Flight Log, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"3"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

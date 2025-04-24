@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press 3, Action Group 3, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

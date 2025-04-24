@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press Z, #b_fltZ, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"2"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

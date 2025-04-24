@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"mouse_button MIDDLE, #b_cameraSlew, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"2"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

@@ -1,0 +1,22 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press ESCAPE, #b_esc, , "
+			}
+		}
+		"Long_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press F3, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

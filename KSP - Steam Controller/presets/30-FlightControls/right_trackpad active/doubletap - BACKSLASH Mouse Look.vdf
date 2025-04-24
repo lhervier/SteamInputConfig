@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press BACKSLASH, #b_mouselook, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"1"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

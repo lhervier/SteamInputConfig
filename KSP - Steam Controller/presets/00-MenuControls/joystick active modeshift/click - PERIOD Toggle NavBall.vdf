@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press KEYPAD_PERIOD, #b_navBall, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"2"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

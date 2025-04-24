@@ -1,0 +1,17 @@
+{
+	"mode"				"touch_menu"
+	"name"				""
+	"description"		""
+	"inputs"
+	{
+	}
+	"settings"
+	{
+		"mouse_smoothing"				"0"
+		"gyro_button"					"1"
+		"touch_menu_button_count"		"7"
+		"touch_menu_opacity"			"83"
+		"touch_menu_position_x"			"100"
+		"touch_menu_position_y"			"12"
+	}
+}

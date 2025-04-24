@@ -1,0 +1,12 @@
+{
+	"mode"		"four_buttons"
+	"name"		""
+	"description"		""
+	"inputs"
+	{
+	}
+	"settings"
+	{
+		"requires_click"		"0"
+	}
+}

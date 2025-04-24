@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press F4, Toggle Vessel Markers, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

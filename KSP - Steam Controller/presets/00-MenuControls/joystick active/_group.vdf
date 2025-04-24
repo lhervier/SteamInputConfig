@@ -1,0 +1,16 @@
+{
+	"mode"		"dpad"
+	"name"		""
+	"description"		""
+	"inputs"
+	{
+		# Les inputs viennents de chaque fichier vdf
+	}
+	"settings"
+	{
+		"requires_click"					"0"
+		"deadzone"							"1176"
+		"analog_emulation_period"			"88"
+		"analog_emulation_duty_cycle_pct"	"8"
+	}
+}

@@ -1,0 +1,21 @@
+{
+	"mode"				"absolute_mouse"
+	"name"				""
+	"description"		""
+	"inputs"
+	{
+		# Les inputs viennents de chaque fichier vdf
+	}
+	"settings"
+	{
+		"sensitivity"				"173"
+		"doubletap_beep"			"1"
+		"rotation_2"				"8"
+		"friction"					"1"
+		"friction_vert_scale"		"119"
+		"sensitivity_vert_scale"	"89"
+		"acceleration"				"1"
+		"edge_spin_radius"			"32767"
+		"doubetap_max_duration"		"500"
+	}
+}

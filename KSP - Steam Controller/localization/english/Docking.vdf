@@ -1,0 +1,11 @@
+{
+	"b_dckCtrl"			"Translate Down"
+	"b_dckShift"		"Translate Up"
+	"b_dckW"			"Translate Forward"
+	"b_dckS"			"Translate Right"
+	"b_dckA"			"Translate Left"
+	"b_dckD"			"Translate Right"
+	"b_dckR"			"RCS Toggle"
+	"b_dckSpace"		"Rot/Lin Toggle"
+	"b_dckRMB"			"Mouselook/Part Menus"
+}

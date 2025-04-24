@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"mouse_button LEFT, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"0"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

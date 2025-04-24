@@ -1,0 +1,30 @@
+"controller_mappings"
+{
+	"version"				"3"
+	"revision"				"92"
+	"title"					"Squad Lionel 3"
+	"description"			"#SettingsController_AutosaveDescription"
+	"creator"				"76561197987585537"
+	"progenitor"			"usercloud://220200/squad lionel 3_0"
+	"url"					"autosave://C:\\Program Files (x86)\\Steam\\steamapps\\common\\Steam Controller Configs\\27319809\\config\\220200\\controller_steamcontroller_gordon.vdf"
+	"export_type"			"personal_local"
+	"controller_type"		"controller_steamcontroller_gordon"
+	"controller_caps"		"2179061"
+	"major_revision"		"0"
+	"minor_revision"		"0"
+	"Timestamp"				"1529008071"
+	"actions"
+	{
+		# Les actions sont ajoutées à partir des fichiers action.vdf présent dans chaque preset
+	}
+	"action_layers"
+	{
+	}
+	"localization"
+	{
+		# Les clés de localisation sont ajoutées à partir du contenu des fichiers présents dans le répertoire "localization"
+	}
+	"settings"
+	{
+	}
+}

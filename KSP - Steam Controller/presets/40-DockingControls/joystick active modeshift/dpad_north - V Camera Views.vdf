@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press V, #b_camViews, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

@@ -1,0 +1,19 @@
+{
+	"mode"				"touch_menu"
+	"name"				""
+	"description"		""
+	"inputs"
+	{
+		# Les inputs viennents de chaque fichier vdf
+	}
+	"settings"
+	{
+		"mouse_smoothing"			"0"
+		"gyro_button"				"1"
+		"touch_menu_button_count"	"16"
+		"touch_menu_opacity"		"69"
+		"touch_menu_position_x"		"11"
+		"touch_menu_position_y"		"12"
+		"touch_menu_scale"			"67"
+	}
+}

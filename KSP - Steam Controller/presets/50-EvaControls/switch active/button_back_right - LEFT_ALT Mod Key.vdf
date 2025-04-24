@@ -1,0 +1,18 @@
+{
+	"button_back_right"
+	{
+		"activators"
+		{
+			"Full_Press"
+			{
+				"bindings"
+				{
+					"binding"		"key_press LEFT_ALT, #b_alt, , "
+				}
+			}
+		}
+		"disabled_activators"
+		{
+		}
+	}
+}
