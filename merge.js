@@ -103,6 +103,14 @@ function loadVdfFile(baseDir, relativePath) {
             content = '"group"\n' + content;
         }
     }
+    // Si c'est un fichier d'input, on déduit le nom de l'input du nom du fichier
+    else if (relativePath.endsWith('.vdf')) {
+        const fileName = path.basename(relativePath);
+        const inputName = fileName.includes(' - ') ? fileName.split(' - ')[0] : fileName.replace('.vdf', '');
+        if (!content.trim().startsWith('"' + inputName + '"')) {
+            content = `"${inputName}"\n${content}`;
+        }
+    }
 
     try {
         return VDF.parse(content);
@@ -199,6 +207,34 @@ function processActions(baseDir) {
 }
 
 /**
+ * Traite tous les inputs d'un groupe
+ * @param {string} baseDir - Dossier de base
+ * @param {string} groupDir - Dossier du groupe
+ * @returns {Object} Objet contenant les inputs comme sous-propriétés
+ * @throws {Error} Si les inputs ne peuvent pas être traités
+ */
+function processInputs(baseDir, groupDir) {
+    const inputs = {};
+    
+    // Lire tous les fichiers VDF du dossier
+    const inputFiles = fs.readdirSync(groupDir)
+        .filter(file => file.endsWith('.vdf') && file !== '_group.vdf')
+        .sort();
+
+    inputFiles.forEach(inputFile => {
+        // Charger et parser le fichier
+        const inputPath = path.join(groupDir, inputFile);
+        const inputData = loadVdfFile(baseDir, path.relative(baseDir, inputPath));
+        
+        // Récupérer le premier (et unique) input de l'objet
+        const inputName = Object.keys(inputData)[0];
+        inputs[inputName] = inputData[inputName];
+    });
+
+    return inputs;
+}
+
+/**
  * Traite tous les groupes d'un preset
  * @param {string} baseDir - Dossier de base
  * @param {string} presetDir - Dossier du preset
@@ -225,6 +261,10 @@ function processGroups(baseDir, presetDir) {
         // Ajouter l'ID au groupe
         const groupId = groupIdCounter.toString();
         groupData.group.id = groupId;
+        
+        // Traiter les inputs du groupe
+        const inputs = processInputs(baseDir, path.join(presetDir, groupType));
+        groupData.group.inputs = inputs;
         
         // Ajouter le groupe à la liste
         groups.push(groupData.group);
