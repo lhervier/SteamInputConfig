@@ -8,7 +8,6 @@
     "merge": "node merge-actions.js"
   },
   "dependencies": {
-    "vdf-parser": "^1.0.0",
-    "fast-xml-parser": "^4.3.2"
+    "vdf-parser": "^1.0.0"
   }
 } 
