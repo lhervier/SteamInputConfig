@@ -4,9 +4,11 @@
   "description": "Convertisseur de fichiers VDF en XML pour les configurations Steam Controller",
   "main": "convert-vdf-to-xml.js",
   "scripts": {
-    "start": "node convert-vdf-to-xml.js"
+    "start": "node convert-vdf-to-xml.js",
+    "merge": "node merge-actions.js"
   },
   "dependencies": {
-    "vdf-parser": "^1.0.0"
+    "vdf-parser": "^1.0.0",
+    "fast-xml-parser": "^4.3.2"
   }
 } 

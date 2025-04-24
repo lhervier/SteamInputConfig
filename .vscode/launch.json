@@ -14,6 +14,34 @@
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"
+        },
+        {
+            "type": "node",
+            "request": "launch",
+            "name": "Fusionner les actions",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/merge-actions.js",
+            "args": [
+                "KSP - Steam Controller"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
+        },
+		{
+            "type": "node",
+            "request": "launch",
+            "name": "Fusionner gordon",
+            "skipFiles": [
+                "<node_internals>/**"
+            ],
+            "program": "${workspaceFolder}/merge.js",
+            "args": [
+                "controller_steamcontroller_gordon"
+            ],
+            "console": "integratedTerminal",
+            "internalConsoleOptions": "neverOpen"
         }
     ]
 } 
