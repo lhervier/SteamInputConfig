@@ -2,24 +2,25 @@ const fs = require('fs');
 const path = require('path');
 const { parse } = require('vdf-parser');
 
-// Fonction pour déterminer le tag racine en fonction du nom du fichier
-function getRootTag(filePath) {
-    const fileName = path.basename(filePath);
-    const dirName = path.dirname(filePath);
-    
-	if (fileName.includes('controller.vdf')) return 'controller-mappings';
-    if (fileName.includes('_group.vdf')) return 'group';
-    if (fileName.includes('_preset.vdf')) return 'preset';
-    if (dirName.includes('localization')) return 'localization';
-    return 'input';
+// Fonction pour nettoyer les commentaires
+function cleanComments(content) {
+    return content.split('\n')
+        .filter(line => {
+            // Supprimer les lignes qui ne contiennent que des espaces/tabs suivis d'un #
+            return !line.match(/^\s*#/);
+        })
+        .join('\n');
 }
 
 // Fonction pour convertir un objet en XML
-function objectToXml(obj, rootTag) {
+function objectToXml(obj) {
+    // La première clé de l'objet est le tag racine
+    const rootTag = Object.keys(obj)[0];
     let xml = `<?xml version="1.0" encoding="UTF-8"?>\n<${rootTag}>\n`;
     
     function processObject(obj, indent) {
-        for (const [key, value] of Object.entries(obj)) {
+        // On commence directement avec le contenu du premier niveau
+        for (const [key, value] of Object.entries(obj[rootTag] || obj)) {
             if (typeof value === 'object' && value !== null) {
                 xml += `${indent}<${key}>\n`;
                 processObject(value, indent + '  ');
@@ -33,13 +34,6 @@ function objectToXml(obj, rootTag) {
     processObject(obj, '  ');
     xml += `</${rootTag}>`;
     return xml;
-}
-
-// Fonction pour extraire le nom du dossier parent
-function getActionName(filePath) {
-    const parentDir = path.basename(path.dirname(filePath));
-    const match = parentDir.match(/^\d{2}-(.+)$/);
-    return match ? match[1] : null;
 }
 
 // Fonction pour extraire le nom du sous-dossier direct dans localization
@@ -61,10 +55,20 @@ function getGroupFileName(fileName) {
     return parts[0];
 }
 
+// Fonction pour extraire le nom du dossier parent
+function getActionName(filePath) {
+    const parentDir = path.basename(path.dirname(filePath));
+    const match = parentDir.match(/^\d{2}-(.+)$/);
+    return match ? match[1] : null;
+}
+
 // Fonction principale pour traiter un fichier
-async function convertFile(filePath) {
+async function convertFile(filePath, baseDir) {
     try {
         let content = fs.readFileSync(filePath, 'utf8');
+        // Nettoyer les commentaires
+        content = cleanComments(content);
+        
         const fileName = path.basename(filePath);
         const dirPath = path.dirname(filePath);
         
@@ -100,31 +104,53 @@ async function convertFile(filePath) {
             }
         }
         
+        // Parser le contenu VDF
         const vdfData = parse(content);
-        const rootTag = getRootTag(filePath);
-        const xmlContent = objectToXml(vdfData, rootTag);
+        const xmlContent = objectToXml(vdfData);
         
         const outputPath = filePath.replace('.vdf', '.xml');
         fs.writeFileSync(outputPath, xmlContent);
-        console.log(`Converti: ${filePath} -> ${outputPath}`);
+        
+        // Afficher le chemin relatif
+        const relativePath = path.relative(baseDir, filePath);
+        console.log(`Converti: ${relativePath} -> ${relativePath.replace('.vdf', '.xml')}`);
     } catch (error) {
-        console.error(`Erreur lors de la conversion de ${filePath}:`, error);
+        const relativePath = path.relative(baseDir, filePath);
+        console.error(`Erreur lors de la conversion de ${relativePath}:`, error);
     }
+}
+
+// Fonction pour collecter tous les fichiers VDF
+function collectVdfFiles(dirPath) {
+    const vdfFiles = [];
+    
+    function scanDirectory(currentPath) {
+        const files = fs.readdirSync(currentPath);
+        
+        for (const file of files) {
+            const fullPath = path.join(currentPath, file);
+            const stat = fs.statSync(fullPath);
+            
+            if (stat.isDirectory()) {
+                scanDirectory(fullPath);
+            } else if (file.endsWith('.vdf')) {
+                vdfFiles.push(fullPath);
+            }
+        }
+    }
+    
+    scanDirectory(dirPath);
+    return vdfFiles;
 }
 
 // Fonction pour parcourir récursivement les dossiers
 function processDirectory(dirPath) {
-    const files = fs.readdirSync(dirPath);
+    // Collecter d'abord tous les fichiers VDF
+    const vdfFiles = collectVdfFiles(dirPath);
     
-    for (const file of files) {
-        const fullPath = path.join(dirPath, file);
-        const stat = fs.statSync(fullPath);
-        
-        if (stat.isDirectory()) {
-            processDirectory(fullPath);
-        } else if (file.endsWith('.vdf')) {
-            convertFile(fullPath);
-        }
+    // Traiter ensuite chaque fichier
+    for (const filePath of vdfFiles) {
+        convertFile(filePath, dirPath);
     }
 }
 
