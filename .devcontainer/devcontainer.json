@@ -1,11 +1,9 @@
 {
 	"name": "steam-input-config",
-	"image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+	"image": "mcr.microsoft.com/devcontainers/javascript-node",
 
 	"features": {
-		"ghcr.io/devcontainers/features/node:1": {
-			"version": "18"
-		}
+		
 	},
 
 	// Pour avoir accès à l'hôte via le nom "host.docker.internal"
