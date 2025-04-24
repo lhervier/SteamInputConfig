@@ -1,0 +1,44 @@
+{
+	"name": "steam-input-config",
+	"image": "mcr.microsoft.com/devcontainers/java:1-21-bullseye",
+
+	"features": {
+		"ghcr.io/devcontainers/features/node:1": {
+			"version": "18"
+		}
+	},
+
+	// Pour avoir accès à l'hôte via le nom "host.docker.internal"
+	"runArgs": [
+		"--add-host=host.docker.internal:host-gateway"
+	],
+
+	"containerEnv": {},
+
+	// Pour que le dev container ai accès à nos clés ssh privées. Ca permet de commité dans git sans passer par une url https
+	// Et pour monter le repository maven local, de manière à ce qu'il ne soit pas téléchargé à chaque fois
+	"mounts": [
+		"type=bind,source=/home/${localEnv:USER}/.ssh,target=/home/vscode/.ssh,readonly"
+	],
+
+	// Use 'forwardPorts' to make a list of ports inside the container available locally.
+	"forwardPorts": [],
+	"portsAttributes": {
+	},
+
+	// Use 'postCreateCommand' to run commands after the container is created.
+	// "postCreateCommand": "java -version",
+
+	// Configure tool-specific properties.
+	"customizations": {
+		"vscode": {
+			"extensions": [
+				"bierner.markdown-mermaid"
+			],
+			"settings": {}
+		}
+	}
+
+	// Uncomment to connect as root instead. More info: https://aka.ms/dev-containers-non-root.
+	// "remoteUser": "root"
+}
