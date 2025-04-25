@@ -320,6 +320,57 @@ function processPresets(baseDir) {
 }
 
 /**
+ * Remplace les références %ID% dans les bindings par les IDs de groupes correspondants
+ * @param {Object[]} group - Liste des groupes
+ * @param {Object[]} preset - Liste des presets
+ */
+function processBindings(group, preset) {
+    // Pour chaque preset
+    preset.forEach(p => {
+        // Pour chaque groupe dans le preset
+        Object.entries(p.group_source_bindings).forEach(([groupId, bindingValue]) => {
+            // Extraire le type de groupe (première partie de la valeur)
+            const groupType = bindingValue.split(' ')[0];
+
+            // Pour chaque groupe qui pourrait référencer ce groupe
+            group.forEach(g => {
+                if (!g.activators) return;
+
+                // Pour chaque activateur du groupe
+                Object.values(g.activators).forEach(activator => {
+                    if (!activator.bindings) return;
+
+                    // Pour chaque binding
+                    Object.entries(activator.bindings).forEach(([key, binding]) => {
+                        const bindings = Array.isArray(binding) ? binding : [binding];
+                        
+                        // Pour chaque valeur de binding
+                        bindings.forEach((value, index) => {
+                            if (!value.startsWith('mode_shift')) {
+                                return;
+                            }
+                            
+                            const parts = value.split(' ');
+                            if (parts.length !== 3 || parts[2] !== '%ID%' || parts[1] !== groupType) {
+                                return;
+                            }
+                            
+                            // Remplacer %ID% par l'ID du groupe cible
+                            const newValue = `${parts[0]} ${parts[1]} ${groupId}`;
+                            if (Array.isArray(binding)) {
+                                binding[index] = newValue;
+                            } else {
+                                activator.bindings[key] = newValue;
+                            }
+                        });
+                    });
+                });
+            });
+        });
+    });
+}
+
+/**
  * Traite un dossier complet
  * @param {string} directoryPath - Chemin du dossier à traiter
  * @throws {Error} Si le dossier ne peut pas être traité
@@ -339,6 +390,12 @@ function processDirectory(directoryPath) {
         const { presets, groups } = processPresets(directoryPath);
         templateData.controller_mappings.preset = presets;
         templateData.controller_mappings.group = groups;
+        
+        // Traiter les bindings
+        processBindings(
+			templateData.controller_mappings.group, 
+			templateData.controller_mappings.preset
+		);
         
         // Écrire le fichier résultant
         const dirName = path.basename(directoryPath);
