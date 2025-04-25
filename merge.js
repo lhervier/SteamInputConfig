@@ -323,50 +323,74 @@ function processPresets(baseDir) {
  * Remplace les références %ID% dans les bindings par les IDs de groupes correspondants
  * @param {Object[]} group - Liste des groupes
  * @param {Object[]} preset - Liste des presets
+ * @throws {Error} Si un groupe référencé n'est pas trouvé dans le preset
  */
 function processBindings(group, preset) {
-    // Pour chaque preset
+    // Créer un index des presets par ID de groupe
+	// et un index des IDs de groupe par type pour chaque preset
+    const presetByGroupId = {};
+    const groupIdByTypeByPreset = {};
     preset.forEach(p => {
-        // Pour chaque groupe dans le preset
+        groupIdByTypeByPreset[p.name] = {};
         Object.entries(p.group_source_bindings).forEach(([groupId, bindingValue]) => {
-            // Extraire le type de groupe (première partie de la valeur)
-            const groupType = bindingValue.split(' ')[0];
-
-            // Pour chaque groupe qui pourrait référencer ce groupe
-            group.forEach(g => {
-                if (!g.activators) return;
-
-                // Pour chaque activateur du groupe
-                Object.values(g.activators).forEach(activator => {
-                    if (!activator.bindings) return;
-
-                    // Pour chaque binding
-                    Object.entries(activator.bindings).forEach(([key, binding]) => {
-                        const bindings = Array.isArray(binding) ? binding : [binding];
-                        
-                        // Pour chaque valeur de binding
-                        bindings.forEach((value, index) => {
-                            if (!value.startsWith('mode_shift')) {
-                                return;
-                            }
-                            
-                            const parts = value.split(' ');
-                            if (parts.length !== 3 || parts[2] !== '%ID%' || parts[1] !== groupType) {
-                                return;
-                            }
-                            
-                            // Remplacer %ID% par l'ID du groupe cible
-                            const newValue = `${parts[0]} ${parts[1]} ${groupId}`;
-                            if (Array.isArray(binding)) {
-                                binding[index] = newValue;
-                            } else {
-                                activator.bindings[key] = newValue;
-                            }
-                        });
-                    });
-                });
-            });
+            presetByGroupId[groupId] = p;
+            if( !bindingValue.endsWith('modeshift')) {
+				return;
+			}
+			const groupType = bindingValue.split(' ')[0];
+			if( groupIdByTypeByPreset[p.name][groupType] ) {
+				throw new Error(`Groupe de type ${groupType} en mode_shift déjà défini dans le preset ${p.name}. On ne supporte pas cette configuration...`);
+			}
+            groupIdByTypeByPreset[p.name][groupType] = groupId;
         });
+    });
+
+    // Pour chaque groupe
+    group.forEach(g  => {
+        // Pour chaque input du groupe
+        if (!g.inputs) return;
+		
+		Object.values(g.inputs).forEach(input => {
+			if (!input.activators) return;
+
+			// Pour chaque activateur de l'input (un même activateur peut apparaître plusieurs fois)
+			Object.values(input.activators).forEach(activator => {
+				const activators = Array.isArray(activator) ? activator : [activator];
+				activators.forEach(a => {
+					if (!a.bindings) return;
+
+					// Pour chaque binding (on peut avoir plusieurs bindings pour un même activateur)
+					Object.entries(a.bindings).forEach(([key, binding]) => {
+						const bindings = Array.isArray(binding) ? binding : [binding];
+						bindings.forEach((value, index) => {
+							if (!value.startsWith('mode_shift ')) return;
+							if (!value.includes('%ID%')) return;
+							
+							// On cherche le preset qui contient ce groupe
+							const groupPreset = presetByGroupId[g.id];
+							if (!groupPreset) return; // Ignorer les groupes qui ne sont dans aucun preset
+
+							// On déduit le type de groupe vidé pour le changement de mode
+							const groupType = value.split(' ')[1];
+							
+							// On cherche l'ID du groupe de type groupType dans ce preset
+							const targetGroupId = groupIdByTypeByPreset[groupPreset.name][groupType];
+							if (!targetGroupId) {
+								throw new Error(`Groupe de type ${groupType} non trouvé dans le preset ${groupPreset.name}`);
+							}
+							
+							// Remplacer %ID% par l'ID du groupe cible
+							const newValue = value.replace(/%ID%/, targetGroupId);
+							if (Array.isArray(binding)) {
+								binding[index] = newValue;
+							} else {
+								a.bindings.binding = newValue;
+							}
+						});
+					});
+				});
+			});
+		});
     });
 }
 
