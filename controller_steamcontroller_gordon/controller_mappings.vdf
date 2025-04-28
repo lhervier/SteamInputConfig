@@ -13,27 +13,6 @@
 	"major_revision"		"0"
 	"minor_revision"		"0"
 	"Timestamp"				"1529008071"
-	"localization"
-	{
-		"english"
-		{
-			"Set_Menu"			"Menu Controls"
-			"Set_Editor"		"Editor Controls"
-			"Set_Map"			"Map Controls"
-			"Set_Flight"		"Flight Controls"
-			"Set_Docking"		"Docking Controls"
-			"Set_EVA"			"EVA Controls"
-		}
-		"french"
-		{
-			"Set_Menu"			"Contrôles Menu"
-			"Set_Editor"		"Contrôles Editeur"
-			"Set_Map"			"Contrôles Carte"
-			"Set_Flight"		"Contrôles Vol"
-			"Set_Docking"		"Contrôle Amarrage"
-			"Set_EVA"			"Contrôles SEV"
-		}
-	}
 	"actions"
 	{
 		# Les actions sont ajoutées à partir des fichiers action.vdf présent dans chaque preset

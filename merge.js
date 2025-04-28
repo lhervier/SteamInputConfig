@@ -196,7 +196,13 @@ function processActions(baseDir) {
     presetDirs.forEach(presetDir => {
         const relativePath = path.join('presets', presetDir, '_action.vdf');
         const actionData = loadVdfFile(baseDir, relativePath);
-        Object.assign(actionsData, actionData);
+
+		// Remplace les référence à #<une cle de traduciton> par la valeur
+		const root = Object.values(actionData)[0];
+		root.title = root.title.replace(/#(\w+)/g, (match, p1) => {
+			return labels[p1] || match;
+		});
+		Object.assign(actionsData, actionData);
     });
 
     return actionsData;
@@ -361,7 +367,12 @@ function processBindings(group, preset) {
 					Object.entries(a.bindings).forEach(([key, binding]) => {
 						const bindings = Array.isArray(binding) ? binding : [binding];
 						bindings.forEach((value, index) => {
-							let newValue = value;
+							
+							// Remplace les référence à #<une cle de traduciton> par la valeur
+							newValue = value.replace(/#(\w+)/g, (match, p1) => {
+								return labels[p1] || match;
+							});
+
 							if (newValue.startsWith('mode_shift ') && newValue.includes('%ID%')) {
 							
 								// On cherche le preset qui contient ce groupe
