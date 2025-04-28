@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"mouse_button RIGHT, , "
+				"binding"		"mouse_button RIGHT, #Menu_rightClick, "
 			}
 			"settings"
 			{

@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"mouse_wheel SCROLL_UP, , "
+				"binding"		"mouse_wheel SCROLL_UP, #Menu_scrollUp, "
 			}
 			"settings"
 			{

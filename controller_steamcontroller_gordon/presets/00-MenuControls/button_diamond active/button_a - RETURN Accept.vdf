@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press F3, Flight Log, , "
+				"binding"		"key_press RETURN, #Menu_accept, "
 			}
 		}
 	}

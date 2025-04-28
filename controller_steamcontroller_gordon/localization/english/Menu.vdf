@@ -1,0 +1,14 @@
+{
+	"Menu_console"		"Console"
+	"Menu_accept"		"Accept"
+	"Menu_cancel"		"Cancel"
+	"Menu_right"		"Right"
+	"Menu_Left"			"Left"
+	"Menu_up"			"Up"
+	"Menu_down"			"Down"
+	"Menu_showKeyboard"	"Show Keyboard"
+	"Menu_scrollDown"	"Scroll Down"
+	"Menu_scrollUp"		"Scroll Up"
+	"Menu_rightClick"	"Right click"
+	"Menu_leftClick"	"Left_click"
+}

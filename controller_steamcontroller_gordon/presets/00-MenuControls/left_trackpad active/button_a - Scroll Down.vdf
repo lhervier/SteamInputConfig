@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"mouse_wheel SCROLL_DOWN, , "
+				"binding"		"mouse_wheel SCROLL_DOWN, #Menu_scrollDown, "
 			}
 			"settings"
 			{

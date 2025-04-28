@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press 9, Action Group 9, , "
+				"binding"		"key_press ESCAPE, #Menu_cancel, "
 			}
 		}
 	}

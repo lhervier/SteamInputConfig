@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press UP_ARROW, #b_menuUp, , "
+				"binding"		"key_press UP_ARROW, #Menu_up, , "
 			}
 		}
 	}

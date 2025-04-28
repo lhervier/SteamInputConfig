@@ -1,0 +1,22 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press ESCAPE, #Menu_console, , "
+			}
+		}
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press F12, #Menu_console, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}
