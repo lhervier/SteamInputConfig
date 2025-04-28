@@ -10,7 +10,8 @@
             ],
             "program": "${workspaceFolder}/merge.js",
             "args": [
-                "controller_steamcontroller_gordon"
+                "controller_steamcontroller_gordon",
+				"english"
             ],
             "console": "integratedTerminal",
             "internalConsoleOptions": "neverOpen"

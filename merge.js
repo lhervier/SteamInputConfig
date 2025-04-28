@@ -4,6 +4,7 @@ const VDF = require('vdf-parser');
 
 let groupIdCounter = 0;
 let presetIdCounter = 0;
+let labels = {};
 
 /**
  * Formate et sauvegarde un objet VDF dans un fichier
@@ -151,10 +152,11 @@ function processLanguageFiles(baseDir, langPath) {
  * Traite le dossier de localisation
  * @param {string} baseDir - Dossier de base
  * @param {string} localizationPath - Chemin relatif du dossier de localisation
+ * @param {string} language - La langue à utiliser
  * @returns {Object} Données de localisation pour toutes les langues
  * @throws {Error} Si le dossier ne peut pas être traité
  */
-function processLocalization(baseDir, localizationPath) {
+function processLocalization(baseDir, localizationPath, language) {
     const localizationData = {};
     const fullLocalizationPath = path.join(baseDir, localizationPath);
     
@@ -162,15 +164,8 @@ function processLocalization(baseDir, localizationPath) {
         return localizationData;
     }
     
-    const languages = fs.readdirSync(fullLocalizationPath)
-        .filter(file => fs.statSync(path.join(fullLocalizationPath, file)).isDirectory());
-    
-    languages.forEach(language => {
-        const langPath = path.join(localizationPath, language);
-        localizationData[language] = processLanguageFiles(baseDir, langPath);
-    });
-    
-    return localizationData;
+	const langPath = path.join(localizationPath, language);
+	labels = processLanguageFiles(baseDir, langPath);
 }
 
 /**
@@ -366,24 +361,25 @@ function processBindings(group, preset) {
 					Object.entries(a.bindings).forEach(([key, binding]) => {
 						const bindings = Array.isArray(binding) ? binding : [binding];
 						bindings.forEach((value, index) => {
-							if (!value.startsWith('mode_shift ')) return;
-							if (!value.includes('%ID%')) return;
+							let newValue = value;
+							if (newValue.startsWith('mode_shift ') && newValue.includes('%ID%')) {
 							
-							// On cherche le preset qui contient ce groupe
-							const groupPreset = presetByGroupId[g.id];
-							if (!groupPreset) return; // Ignorer les groupes qui ne sont dans aucun preset
+								// On cherche le preset qui contient ce groupe
+								const groupPreset = presetByGroupId[g.id];
+								if (!groupPreset) return; // Ignorer les groupes qui ne sont dans aucun preset
 
-							// On déduit le type de groupe vidé pour le changement de mode
-							const groupType = value.split(' ')[1];
-							
-							// On cherche l'ID du groupe de type groupType dans ce preset
-							const targetGroupId = groupIdByTypeByPreset[groupPreset.name][groupType];
-							if (!targetGroupId) {
-								throw new Error(`Groupe de type ${groupType} non trouvé dans le preset ${groupPreset.name}`);
+								// On déduit le type de groupe vidé pour le changement de mode
+								const groupType = newValue.split(' ')[1];
+								
+								// On cherche l'ID du groupe de type groupType dans ce preset
+								const targetGroupId = groupIdByTypeByPreset[groupPreset.name][groupType];
+								if (!targetGroupId) {
+									throw new Error(`Groupe de type ${groupType} non trouvé dans le preset ${groupPreset.name}`);
+								}
+								newValue = newValue.replace(/%ID%/, targetGroupId);
 							}
 							
 							// Remplacer %ID% par l'ID du groupe cible
-							const newValue = value.replace(/%ID%/, targetGroupId);
 							if (Array.isArray(binding)) {
 								binding[index] = newValue;
 							} else {
@@ -400,15 +396,16 @@ function processBindings(group, preset) {
 /**
  * Traite un dossier complet
  * @param {string} directoryPath - Chemin du dossier à traiter
+ * @param {string} language - La langue à utiliser
  * @throws {Error} Si le dossier ne peut pas être traité
  */
-function processDirectory(directoryPath) {
+function processDirectory(directoryPath, language) {
     try {
         // Charger le template
         const templateData = loadTemplate(directoryPath);
         
-        // Traiter la localisation
-        templateData.controller_mappings.localization = processLocalization(directoryPath, 'localization');
+        // Charger les clés de localisation
+        processLocalization(directoryPath, 'localization', language);
         
         // Traiter les actions
         templateData.controller_mappings.actions = processActions(directoryPath);
@@ -437,10 +434,11 @@ function processDirectory(directoryPath) {
 }
 
 // Point d'entrée du script
-if (process.argv.length < 3) {
-    console.error('Veuillez spécifier un dossier en paramètre');
+if (process.argv.length < 4) {
+    console.error('Veuillez spécifier un dossier et une langue en paramètre');
     process.exit(1);
 }
 
 const targetDirectory = process.argv[2];
-processDirectory(targetDirectory);
+const language = process.argv[3];
+processDirectory(targetDirectory, language);
