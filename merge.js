@@ -3,6 +3,7 @@ const path = require('path');
 const VDF = require('vdf-parser');
 
 let groupIdCounter = 0;
+let presetIdCounter = 0;
 
 /**
  * Formate et sauvegarde un objet VDF dans un fichier
@@ -20,8 +21,8 @@ function saveVdfFile(obj, filePath) {
             value.forEach(item => {
                 result += `${tab.repeat(indent)}"${key}"\n${tab.repeat(indent)}{\n`;
                 
-                // Cas spécial pour les groupes : on écrit l'id en premier
-                if (key === 'group' && item.id !== undefined) {
+                // Cas spécial pour les groupes et les presets : on écrit l'id en premier
+                if ( (key === 'group' || key === 'preset') && item.id !== undefined) {
                     result += `${tab.repeat(indent + 1)}"id"\t\t"${item.id}"\n`;
                     const { id, ...rest } = item;
                     formatVdf(rest, indent + 1);
@@ -300,7 +301,8 @@ function processPresets(baseDir) {
     presetDirs.forEach(presetDir => {
         const presetPath = path.join(presetsDir, presetDir);
         const presetData = loadVdfFile(baseDir, path.join('presets', presetDir, '_preset.vdf'));
-        
+        presetData.preset.id = presetIdCounter.toString();
+
         // Traiter les groupes du preset
         const { groups, groupBindings } = processGroups(baseDir, presetPath);
         
@@ -311,6 +313,7 @@ function processPresets(baseDir) {
         presetData.preset.group_source_bindings = groupBindings;
         
         presets.push(presetData.preset);
+		presetIdCounter++;
     });
 
     return {
