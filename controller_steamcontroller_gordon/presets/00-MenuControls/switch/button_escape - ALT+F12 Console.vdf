@@ -1,14 +1,14 @@
 {
 	"activators"
 	{
-		"Full_Press"
+		"Long_Press"
 		{
 			"bindings"
 			{
-				"binding"		"key_press ESCAPE, #Menu_console, , "
+				"binding"		"key_press LEFT_ALT, #Menu_console, , "
 			}
 		}
-		"Full_Press"
+		"Long_Press"
 		{
 			"bindings"
 			{
