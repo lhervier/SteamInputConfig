@@ -5,7 +5,7 @@
 	"title"					"KSP Custom Config"
 	"description"			"#SettingsController_AutosaveDescription"
 	"creator"				"76561197987585537"
-	"progenitor"			"usercloud://220200/squad lionel 3_0"
+	"progenitor"			""
 	"url"					"autosave://C:\\Program Files (x86)\\Steam\\steamapps\\common\\Steam Controller Configs\\27319809\\config\\220200\\controller_steamcontroller_gordon.vdf"
 	"export_type"			"personal_local"
 	"controller_type"		"controller_steamcontroller_gordon"
