@@ -431,6 +431,8 @@ function processDirectory(directoryPath, language) {
 			templateData.controller_mappings.group, 
 			templateData.controller_mappings.preset
 		);
+
+		templateData.controller_mappings.Timestamp = "" + Date.now();
         
         // Écrire le fichier résultant
         const dirName = path.basename(directoryPath);
