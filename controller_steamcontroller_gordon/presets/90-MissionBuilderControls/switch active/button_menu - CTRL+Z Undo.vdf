@@ -1,0 +1,22 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press LEFT_CONTROL, #b_edCtrlZ, , "
+			}
+		}
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press W, #b_edCtrlZ, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

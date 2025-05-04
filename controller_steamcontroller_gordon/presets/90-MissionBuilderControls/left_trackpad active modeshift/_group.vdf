@@ -1,0 +1,13 @@
+{
+	"mode"		"four_buttons"
+	"name"		""
+	"description"		""
+	"inputs"
+	{
+	}
+	"settings"
+	{
+		"requires_click"		"0"
+		"button_dist"		"28190"
+	}
+}

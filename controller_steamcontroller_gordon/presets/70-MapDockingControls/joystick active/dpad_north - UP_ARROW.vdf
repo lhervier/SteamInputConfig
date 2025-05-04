@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press UP_ARROW, #b_menuUp, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

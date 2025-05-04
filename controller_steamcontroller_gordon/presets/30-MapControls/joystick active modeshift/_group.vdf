@@ -1,0 +1,12 @@
+{
+	"mode"		"dpad"
+	"name"		""
+	"description"		""
+	"inputs"
+	{
+	}
+	"settings"
+	{
+		"requires_click"		"0"
+	}
+}

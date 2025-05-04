@@ -1,0 +1,12 @@
+{
+	"mode"		"trigger"
+	"name"		""
+	"description"		""
+	"inputs"
+	{
+	}
+	"settings"
+	{
+		"adaptive_threshold"		"0"
+	}
+}

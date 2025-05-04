@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press KEYPAD_PERIOD, #b_mapNavBall, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press M, #b_mapLeave, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

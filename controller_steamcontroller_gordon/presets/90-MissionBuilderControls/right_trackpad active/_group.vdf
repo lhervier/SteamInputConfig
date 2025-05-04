@@ -1,0 +1,19 @@
+{
+	"mode"		"absolute_mouse"
+	"name"		""
+	"description"		""
+	"inputs"
+	{
+	}
+	"settings"
+	{
+		"sensitivity"		"174"
+		"doubletap_beep"		"1"
+		"rotation_2"		"9"
+		"friction"		"1"
+		"acceleration"		"1"
+		"doubetap_max_duration"		"500"
+		"mouse_dampening_trigger"		"3"
+		"mouse_trigger_clamp_amount"		"34"
+	}
+}

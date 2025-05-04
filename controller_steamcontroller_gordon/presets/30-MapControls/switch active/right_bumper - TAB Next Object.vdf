@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press TAB, #b_mapTab, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

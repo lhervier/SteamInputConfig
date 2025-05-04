@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press PERIOD, #b_timeWarpIncr, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

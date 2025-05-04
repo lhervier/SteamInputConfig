@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press 4, #b_ed4, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"3"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

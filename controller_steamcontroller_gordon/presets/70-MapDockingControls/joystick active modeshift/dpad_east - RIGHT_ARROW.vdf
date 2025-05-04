@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press RIGHT_ARROW, #b_menuRight, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

@@ -1,8 +1,12 @@
 {
-	"Set_Menu"			"Menu Controls"
-	"Set_Flight"		"Flight Controls"
-	"Set_Docking"		"Docking Controls"
-	"Set_Editor"		"Editor Controls"
-	"Set_Map"			"Map Controls"
-	"Set_EVA"			"EVA Controls"
+	"Set_Menu"				"Menu Controls"
+	"Set_TrackingStation"	"Tracking Station Controls"
+	"Set_Editor"			"Editor Controls"
+	"Set_Map"				"Map Controls"
+	"Set_Flight"			"Flight Controls"
+	"Set_MapFlight"			"Map Flight Controls"
+	"Set_Docking"			"Docking Controls"
+	"Set_MapDocking"		"Map Docking Controls"
+	"Set_EVA"				"EVA Controls"
+	"Set_MissionBuilder"	"Mission Builder Controls"
 }
