@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press COMMA, #b_timeWarpDec, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}
