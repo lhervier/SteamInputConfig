@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press LEFT_SHIFT, , "
+				"binding"		"mouse_button LEFT, #Menu_leftClick, "
 			}
 			"settings"
 			{
