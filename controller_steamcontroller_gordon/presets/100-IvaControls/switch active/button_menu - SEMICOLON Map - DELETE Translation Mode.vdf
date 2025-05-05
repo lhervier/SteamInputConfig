@@ -1,0 +1,22 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press SEMICOLON, #b_map, , "
+			}
+		}
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press DELETE, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

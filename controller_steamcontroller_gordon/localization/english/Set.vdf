@@ -6,7 +6,8 @@
 	"Set_MapFlight"				"Map Flight"
 	"Set_Docking"				"Docking"
 	"Set_MapDocking"			"Map Docking"
-	"Set_EVA"					"EVA"
+	"Set_EVA"					"Extra Vehicular Activity"
 	"Set_EVAConstructionMode"	"EVA Construction Mode"
+	"Set_IVA"					"Intra Vehicular Activity"
 	"Set_MissionBuilder"		"Mission Builder"
 }

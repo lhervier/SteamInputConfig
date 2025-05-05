@@ -1,0 +1,19 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"mode_shift button_diamond %ID%"
+			}
+			"settings"
+			{
+				"interruptable"		"0"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}
