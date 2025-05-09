@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press R, #b_fltR, , "
+				"binding"		"key_press Z, #b_fltW, , "
 			}
 		}
 	}
