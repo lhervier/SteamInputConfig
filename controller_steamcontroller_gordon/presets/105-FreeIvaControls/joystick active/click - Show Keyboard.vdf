@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"controller_action SHOW_KEYBOARD, #b_cameraSlew, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

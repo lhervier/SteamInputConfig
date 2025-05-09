@@ -7,7 +7,9 @@
 	"Set_Docking"				"Docking"
 	"Set_MapDocking"			"Map Docking"
 	"Set_EVA"					"Extra Vehicular Activity"
+	"Set_EVA"					"Map Extra Vehicular Activity"
 	"Set_EVAConstructionMode"	"EVA Construction Mode"
 	"Set_IVA"					"Intra Vehicular Activity"
+	"Set_FreeIVA"				"Free IVA"
 	"Set_MissionBuilder"		"Mission Builder"
 }

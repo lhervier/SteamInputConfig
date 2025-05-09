@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"key_press RIGHT_BRACKET, #b_vesselNext, , "
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}

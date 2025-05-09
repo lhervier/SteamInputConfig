@@ -1,0 +1,15 @@
+{
+	"activators"
+	{
+		"Full_Press"
+		{
+			"bindings"
+			{
+				"binding"		"mode_shift joystick %ID%"
+			}
+		}
+	}
+	"disabled_activators"
+	{
+	}
+}
