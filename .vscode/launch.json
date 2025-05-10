@@ -4,7 +4,7 @@
 		{
             "type": "node",
             "request": "launch",
-            "name": "Fusionner gordon",
+            "name": "Steam Controller",
             "skipFiles": [
                 "<node_internals>/**"
             ],
