@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press BACKSPACE, #b_bksp, , "
+				"binding"		"key_press S, #b_dckS, , "
 			}
 		}
 	}

@@ -5,11 +5,11 @@
 		{
 			"bindings"
 			{
-				"binding"		"mouse_button LEFT, , "
+				"binding"		"key_press 4, Action Group 4, , "
 			}
 			"settings"
 			{
-				"haptic_intensity"		"0"
+				"haptic_intensity"		"3"
 			}
 		}
 	}

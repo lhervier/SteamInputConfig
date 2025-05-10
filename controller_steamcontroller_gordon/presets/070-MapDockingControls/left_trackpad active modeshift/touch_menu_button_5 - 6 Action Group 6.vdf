@@ -5,11 +5,11 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press LEFT_CONTROL, , "
+				"binding"		"key_press 6, Action Group 6, , "
 			}
 			"settings"
 			{
-				"haptic_intensity"		"2"
+				"haptic_intensity"		"3"
 			}
 		}
 	}

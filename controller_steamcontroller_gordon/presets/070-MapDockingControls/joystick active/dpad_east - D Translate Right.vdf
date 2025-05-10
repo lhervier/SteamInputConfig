@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press LEFT_ARROW, #b_menuLeft, , "
+				"binding"		"key_press D, #b_dckD, , "
 			}
 		}
 	}

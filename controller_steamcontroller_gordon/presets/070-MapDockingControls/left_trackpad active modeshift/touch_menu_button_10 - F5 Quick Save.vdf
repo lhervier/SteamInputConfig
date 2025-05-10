@@ -5,7 +5,11 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press TAB, #b_mapTab, , "
+				"binding"		"key_press F5, Quicksave, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"3"
 			}
 		}
 	}

@@ -5,7 +5,11 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press RIGHT_ARROW, #b_menuRight, , "
+				"binding"		"key_press F2, Toggle UI, , "
+			}
+			"settings"
+			{
+				"haptic_intensity"		"3"
 			}
 		}
 	}

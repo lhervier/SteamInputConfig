@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press M, #b_mapLeave, , "
+				"binding"		"key_press TAB, , "
 			}
 		}
 	}

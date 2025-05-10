@@ -5,11 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"mouse_button LEFT, , "
-			}
-			"settings"
-			{
-				"haptic_intensity"		"0"
+				"binding"		"key_press R, #b_fltR, , "
 			}
 		}
 	}

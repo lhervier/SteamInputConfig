@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press DOWN_ARROW, #b_menuDown, , "
+				"binding"		"key_press U, Lights, , "
 			}
 		}
 	}

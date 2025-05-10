@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press R, RCS, , "
+				"binding"		"key_press F, #b_fltF, , "
 			}
 		}
 	}
