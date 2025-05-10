@@ -7,10 +7,6 @@
 			{
 				"binding"		"key_press COMMA, #b_timeWarpDecr, , "
 			}
-			"settings"
-			{
-				"haptic_intensity"		"3"
-			}
 		}
 	}
 	"disabled_activators"

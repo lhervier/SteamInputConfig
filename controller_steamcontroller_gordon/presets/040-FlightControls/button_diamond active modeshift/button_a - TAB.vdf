@@ -7,10 +7,6 @@
 			{
 				"binding"		"key_press TAB, , "
 			}
-			"settings"
-			{
-				"haptic_intensity"		"3"
-			}
 		}
 	}
 	"disabled_activators"
