@@ -5,4 +5,8 @@
 	"inputs"
 	{
 	}
+	"settings"
+	{
+		"edge_binding_radius"		"27202"
+	}
 }

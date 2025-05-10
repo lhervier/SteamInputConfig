@@ -5,11 +5,11 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press Z, #b_fltZ, , "
+				"binding"		"key_press F10, Temp Display Mode, , "
 			}
 			"settings"
 			{
-				"haptic_intensity"		"2"
+				"haptic_intensity"		"3"
 			}
 		}
 	}

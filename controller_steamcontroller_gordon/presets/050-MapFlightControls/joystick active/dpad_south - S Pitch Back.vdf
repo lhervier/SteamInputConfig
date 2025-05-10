@@ -5,11 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press Z, #b_fltZ, , "
-			}
-			"settings"
-			{
-				"haptic_intensity"		"2"
+				"binding"		"key_press S, #b_fltS, , "
 			}
 		}
 	}

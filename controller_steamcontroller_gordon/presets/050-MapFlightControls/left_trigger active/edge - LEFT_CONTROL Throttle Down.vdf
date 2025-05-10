@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press LEFT_CONTROL, , "
+				"binding"		"key_press LEFT_CONTROL, #b_fltCtrl, , "
 			}
 			"settings"
 			{

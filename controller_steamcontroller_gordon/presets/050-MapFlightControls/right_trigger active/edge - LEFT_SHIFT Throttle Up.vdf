@@ -5,7 +5,7 @@
 		{
 			"bindings"
 			{
-				"binding"		"key_press Z, #b_fltZ, , "
+				"binding"		"key_press LEFT_SHIFT, #b_fltShift, , "
 			}
 			"settings"
 			{
